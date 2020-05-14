@@ -1,1 +1,1 @@
-# QuantumCompuingFinal
+# QuantumComputingFinal
