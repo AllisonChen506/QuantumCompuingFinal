@@ -60,7 +60,6 @@ print(bob_bases)
 
 circuit = QuantumCircuit(len(secretnumber)+1, len(secretnumber))
 
-#circuit.h([0,1,2,3,4,5])
 circuit.h(range(len(secretnumber)))
 circuit.x(len(secretnumber))
 circuit.h(len(secretnumber))
@@ -69,14 +68,10 @@ circuit.barrier()
 for ii, yesno in enumerate(reversed(secretnumber)):
     if yesno == '1':
         circuit.cx(ii, len(secretnumber))
-#circuit.cx(5, 6)
-#circuit.cx(3, 6)
-#circuit.cx(0, 6)
 
 circuit.barrier()
 circuit.h(range(len(secretnumber)))
 circuit.barrier()
-#circuit.h([0,1,2,3,4,5])
 circuit.measure(range(len(secretnumber)), range(len(secretnumber)))
 
 
